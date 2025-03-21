@@ -13,9 +13,16 @@
 
     <h2>Notes:</h2>
     <ul>
-        <% notes.forEach(note => { %>
-            <li><%= note %></li>
+        <% notes.forEach((note, index) => { %>
+            <li>
+                <%= note %> 
+                <form action="/delete" method="POST">
+                    <input type="hidden" name="index" value="<%= index %>">
+                    <input type="submit" value="Delete">
+                </form>
+            </li>
         <% }) %>
     </ul>
+    
 </body>
 </html>

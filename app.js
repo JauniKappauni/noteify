@@ -17,5 +17,11 @@ app.post('/', (req, res) => {
     res.redirect('/')
 });
 
+app.post('/delete', (req, res) => {
+    const index = req.body.index;
+    notes.splice(index, 1)
+    res.redirect('/')
+});
+
 
 app.listen(port, () => console.log(`Server läuft auf http://localhost:${port}`))
