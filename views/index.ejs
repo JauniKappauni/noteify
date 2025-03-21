@@ -6,6 +6,16 @@
     <title>Notify</title>
 </head>
 <body>
-    
+    <form action="/" method="POST">
+        <input type="text" name="note" placeholder="Enter your note here">
+        <input type="submit" value="Add Note">
+    </form>
+
+    <h2>Notes:</h2>
+    <ul>
+        <% notes.forEach(note => { %>
+            <li><%= note %></li>
+        <% }) %>
+    </ul>
 </body>
 </html>
